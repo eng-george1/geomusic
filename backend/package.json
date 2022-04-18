@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "PORT:3000 & node app.js",
-    "dev": "PORT:3000 & TOKEN_KEY:geoMusic & TOKEN_EXPIRE:2h & nodemon index.js"
+    "start": "set PORT=3000 && set TOKEN_KEY=geoMusic && set TOKEN_EXPIRE=3600000 && nodemon index.js",
+    "dev": "PORT:3000 & TOKEN_KEY:geoMusic & TOKEN_EXPIRE:1m & nodemon index.js"
   },
   "keywords": [],
   "author": "",

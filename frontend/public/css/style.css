@@ -1,15 +1,16 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
 
-.header{
+.header {
     display: flex;
     flex-direction: column;
     padding: 15px;
-    border: 2px solid black ;
+    border: 2px solid black;
 }
+
 .logo {
     margin-left: 28px;
     margin-top: 5px;
@@ -17,29 +18,34 @@
     height: 50px;
     width: 180px;
 }
-.input-credentials{
+
+.input-credentials {
     margin-left: 40%;
     display: inline-block;
-    
+
     padding-top: 0px;
     margin-top: 20;
     margin-top: -54px;
 }
-input{
+
+input {
     border-radius: 5px;
     padding: 7px 15px;
-    border-color: rgb(221, 221, 221) ;
+    border-color: rgb(221, 221, 221);
     margin-right: 20px;
 
 }
-input:hover{
+
+input:hover {
     border-radius: 5px;
     padding: 7px 15px;
-    border-color: rgb(34, 34, 34) ;
+    border-color: rgb(34, 34, 34);
 
 }
+
 .button {
-    background-color: black; /* black */
+    background-color: black;
+    /* black */
     border: none;
     border-radius: 10px;
     color: white;
@@ -49,6 +55,37 @@ input:hover{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-  }
-  .active {
-    background-color: green; /* Green */}
+}
+
+.active {
+    background-color: green;
+    /* Green */
+}
+
+#logoutform {
+    align-items: flex-end;
+}
+table {
+	border-collapse: collapse;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+table td {
+	padding: 15px;
+}
+table thead td {
+	background-color: #54585d;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 13px;
+	border: 1px solid #54585d;
+}
+table tbody td {
+	color: #636363;
+	border: 1px solid #dddfe1;
+}
+table tbody tr {
+	background-color: #f9fafb;
+}
+table tbody tr:nth-child(odd) {
+	background-color: #ffffff;
+}

@@ -1,34 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyMusic Website</title>
     <link rel="stylesheet" href="./public/css/style.css">
-    <script src="./public/js/main.js">
-   
-    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="./public/js/main.js"> </script>
+    <script src="./public/js/songs.js"> </script>
+    <script src="./public/js/playlist.js"> </script>
 </head>
 
 <body>
     <header class="header">
-    <img src="./public/image/GeoLogo.png" class="logo" alt="logo">
-    <div class="input-credentials">
-        <form id="loginform" >
-        <label for="username" >Username : </label>
-        <input type="text" id="username"/>
-        <label for="password">Password : </label>
-        <input type="password" id="password"/>
-        <button type="submit" class="button active" id="login-btn" >Login</button>
-        <button type="reset" class="button" >Reset</button>
-        <label id="errorlabel" style="color:red"></label>
-     </form>
+        <img src="./public/image/GeoLogo.png" class="logo" alt="logo">
+        <div class="input-credentials">
+            <form id="loginform">
+                <label for="username">Username : </label>
+                <input type="text" id="username" />
+                <label for="password">Password : </label>
+                <input type="password" id="password" />
+                <button type="submit" class="button active" id="login-btn">Login</button>
+                <button type="reset" class="button">Reset</button>
+                <label id="errorlabel" style="color:red"></label>
+            </form>
+            <form id="logoutform">
+                <label for="welcome" id="welcomeuser"></label>
+                <button type="submit" class="button" id="logout-btn">logout</button>
+            </form>
+        </div>
+
+    </header>
+    <h1>Welcome to Geo Music Website</h1>
+    <div class="interseted" id="intersted">
+        <h3>Songs you may interest</h3>
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Release Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="data-output">
+                <!-- songs from gavascript file in here. -->
+            </tbody>
+        </table> 
+    </div>
+    <div class="interseted" id="playlist">
+        <h3>Your Playlist</h3>
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Release Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="playlistoutput">
+                <!-- songs from gavascript file in here. -->
+            </tbody>
+        </table> 
     </div>
    
-    </header>
-    <h1>Welcom to MyMusic Website</h1>
-    
-    
+
 </body>
+
 </html>

@@ -8,4 +8,4 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use('/users', userrouters);
 
-app.listen(3000, () => console.log('listening to 3000...'));
+app.listen(process.env.PORT || 3000, () => console.log('listening to 3000...'));

@@ -1,13 +1,24 @@
-const users = require('../models/users')
+const { json } = require("express");
+const users = require("../models/users");
 
 users.loadData();
-exports.login = (req,res,next) => {
-    console.log(req.body);
-    console.log(users.login(req.body.username , req.body.password) );
-    res.status(200).json(users.login(req.body.username , req.body.password )); 
-    res.end();
+exports.login = (req, res, next) => {
+  let result = users.login(req.body.username, req.body.password);
+  console.log(result);
+  if (result.token) {
+    res.status(200).json(result);
+  } else {
+    res.status(401).json(result);
+  }
+  res.end();
 };
 
 exports.isValidToken = (token) => {
-    res.status(200).json(users.isValidToken(token)); 
-} ;
+  try {
+    res.status(200).json(users.isValidToken(token));
+  } catch (error) {
+    res
+      .status(20103)
+      .json({ message: "Invalid token or expired please login again" });
+  }
+};

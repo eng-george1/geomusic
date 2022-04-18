@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyMusic Website</title>
     <link rel="stylesheet" href="./public/css/style.css">
-    <script>
+    <script src="./public/js/main.js">
    
     </script>
 </head>
@@ -15,13 +15,14 @@
     <header class="header">
     <img src="./public/image/GeoLogo.png" class="logo" alt="logo">
     <div class="input-credentials">
-        <form action="http://localhost:3000/users/login/" method="POST"  >
+        <form id="loginform" >
         <label for="username" >Username : </label>
         <input type="text" id="username"/>
         <label for="password">Password : </label>
         <input type="password" id="password"/>
         <button type="submit" class="button active" id="login-btn" >Login</button>
         <button type="reset" class="button" >Reset</button>
+        <label id="errorlabel" style="color:red"></label>
      </form>
     </div>
    

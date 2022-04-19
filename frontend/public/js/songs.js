@@ -23,10 +23,10 @@ async function getSongs() {
     out += `
 			<tr>
 				
-				<td>${song.id}</td>
+				<td style="text-align: center">${song.id}</td>
 				<td>${song.title}</td>
-				<td>${song.releasedate}</td>
-				<td> <button type="submit" class="active" onclick='addtoList(${song.id})'><i class="fa fa-plus"></i></td>
+				<td style="text-align: center">${song.releasedate}</td>
+				<td class="trButton"> <button type="submit" class="active" onclick='addtoList(${song.id})'><i class="fa fa-plus fa-3x"></i></td>
 			</tr>
 		`;
   }

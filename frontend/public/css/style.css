@@ -2,8 +2,41 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+}
+.fixeddiv{
+display: inline-block;
+}
+#audio{
+
+    position: relative;
+    left: 40px;
+    width: 856px;
+    display: inline-block;
+    margin-top: 17px;
 }
 
+
+.divAudio{
+    position: fixed;
+    bottom: 0px;
+
+    background-color: #92bf92;
+    width: 100%;
+}
+.trButton{
+    text-align: center;
+    
+}
+h1{
+    text-align: center;
+}
+.tableHeader{
+    border: 1px solid black;
+    background-color: #92bf92
+}
 .header {
     display: flex;
     flex-direction: column;
@@ -58,16 +91,21 @@ input:hover {
 }
 
 .active {
-    background-color: green;
+    background-color:  #92bf92;;
+    width: 50px;
+    height: 50px;
     /* Green */
 }
 
 #logoutform {
-    align-items: flex-end;
+    text-align: end;
 }
 table {
 	border-collapse: collapse;
-    font-family: Tahoma, Geneva, sans-serif;
+   
+    width: 57%;
+    margin-left: 25%;
+    margin-top: 50px;
 }
 table td {
 	padding: 15px;
@@ -80,8 +118,9 @@ table thead td {
 	border: 1px solid #54585d;
 }
 table tbody td {
-	color: #636363;
+	color: #000000;;
 	border: 1px solid #dddfe1;
+    font-weight: 700;
 }
 table tbody tr {
 	background-color: #f9fafb;

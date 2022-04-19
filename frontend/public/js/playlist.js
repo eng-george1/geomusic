@@ -18,10 +18,10 @@ async function getPlaylist() {
     out += `
 			<tr>
 				
-				<td>${song.id}</td>
+				<td style="text-align: center">${song.id}</td>
 				<td>${song.title}</td>
-				<td>${song.releasedate}</td>
-				<td> <button type="submit"  onclick='removefromList(${song.id})'><i class="fa fa-minus"></i></button>&nbsp;&nbsp;&nbsp;<button type="submit"  class="active" onclick='playSong(${song.id})'><i class="fa fa-play"></i></button></td>
+				<td style="text-align: center">${song.releasedate}</td>
+				<td class="trButton"> <button type="submit"  onclick='removefromList(${song.id})'><i class="fa fa-minus fa-3x"></i></button>&nbsp;&nbsp;&nbsp;<button type="submit"  class="active" onclick='playSong(${song.id})'><i class="fa fa-play fa-3x"></i></button></td>
 			</tr>
 		`;
   }

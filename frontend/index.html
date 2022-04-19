@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyMusic Website</title>
     <link rel="stylesheet" href="./public/css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b83598f372.js" crossorigin="anonymous"></script>
     <script src="./public/js/main.js"> </script>
     <script src="./public/js/songs.js"> </script>
     <script src="./public/js/playlist.js"> </script>
@@ -34,13 +34,19 @@
         </div>
 
     </header>
-    <h1>Welcome to Geo Music Website</h1>
+    <div>
+        <h1>Welcome to Geo Music Website</h1>
+    </div>
+
     <div class="interseted" id="intersted">
-        <h3>Songs you may interest</h3>
+
         <hr>
+        <h3 style="position: relative;top: 45px;left: 380px;">Songs you may interest</h3>
+
+
         <table>
             <thead>
-                <tr>
+                <tr class="tableHeader">
                     <th>Id</th>
                     <th>Title</th>
                     <th>Release Date</th>
@@ -50,14 +56,22 @@
             <tbody id="data-output">
                 <!-- songs from gavascript file in here. -->
             </tbody>
-        </table> 
+        </table>
     </div>
+
+
+
+
+
     <div class="interseted" id="playlist">
-        <h3>Your Playlist</h3>
-        <hr>
+        
+ <hr>
+
+        <h3 style="position: relative;top: 45px;left: 380px;">Your Playlist</h3>
+       
         <table>
             <thead>
-                <tr>
+                <tr class="tableHeader">
                     <th>Id</th>
                     <th>Title</th>
                     <th>Release Date</th>
@@ -67,22 +81,43 @@
             <tbody id="playlistoutput">
                 <!-- songs from gavascript file in here. -->
             </tbody>
-        </table> 
+        </table>
     </div>
-  
-    <div id="playforward">
-        <button class="active" onclick="playbackward()"><i class="fa fa-fast-backward"></i></button>
-        <button onclick="playforward()" class="active"><i class="fa fa-fast-forward"></i></button>
-      <label id="playsongname"></label>
-    <audio id="audio" controls autoplay>       
-        <source id="audioSource" src="" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-      <button class="active" onclick="normal()"><i class="fa-solid fa-list-music"></i></button>
-      <button class="active" onclick="shuffle()" ><i class="fa-solid fa-shuffle"></i></button>
-      <button class="active" onclick="once()"><i class="fa-solid fa-play-pause"></i></button>
 
-   </div>
+    <div id="playforward">
+
+        <div class="divAudio">
+
+
+
+            <div class="fixeddiv" style="    position: relative;left: 130px;">
+                <button class="active" onclick="playbackward()"><i class="fa fa-fast-backward fa-3x"></i></button>
+                <button onclick="playforward()" class="active"><i class="fa fa-fast-forward fa-3x"></i></button>
+            </div>
+
+            <div style="display: inline-block;    position: relative;
+         left: 322px;
+         width: 856px;
+         display: inline-block; ">
+                <audio id="audio" controls autoplay style="    width: 700px;display: block;">
+                    <source id="audioSource" src="" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="fixeddiv" style="position: relative;right: 200px;top: -30px; width: 180px;">
+                <label id="playsongname"></label>
+            </div>
+
+            <div style="display: inline-block; position: relative;
+         right: -155px;">
+                <button class="active" onclick="normal()"><i class="fa-solid fa-repeat fa-3x"></i></button>
+                <button class="active" onclick="shuffle()"><i class="fa-solid fa-shuffle fa-3x"></i></button>
+                <button class="active" onclick="once()"><i class="fa-solid fa-rotate-right fa-3x "></i></button>
+            </div>
+        </div>
+
+
+    </div>
 
 </body>
 

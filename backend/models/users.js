@@ -25,7 +25,7 @@ module.exports = class user {
       { userid: id, username: username },
       process.env.TOKEN_KEY || "geoMusic",
       {
-        expiresIn: process.env.TOKEN_EXPIRE || 60 * 60 * 60,
+        expiresIn: '60s',/*process.env.TOKEN_EXPIRE.toString() ||*/
       }
     );
     // save user token
@@ -51,10 +51,15 @@ module.exports = class user {
   }
 
   static isValidToken(token) {
+    try{
     console.log(token);
     const decoded = jwt.verify(token, config.TOKEN_KEY || "geoMusic");
     console.log("m");
     return decoded;
+    }
+    catch(error){
+      return false;
+    }
     // const index = users.findIndex(
     //   (u) => u.token == token && u.creationdate >= Date.now() - 1
     // );

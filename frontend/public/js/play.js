@@ -13,13 +13,7 @@ async function playSong(songid) {
   //   console.log("g");
   //   let song = result;
 
-  var audio = document.getElementById("audio");
-
-  var source = document.getElementById("audioSource");
-  source.src = "http://localhost:3000/songs/play/" + songid;
-  //console.log(song);
-  audio.load(); //call this to just preload the audio without playing
-  audio.play(); //call this to play the song right away
+  
   let isok = false;
   let result = await fetch(apiurl + "users/playlist", {
     method: "GET",
@@ -31,13 +25,24 @@ async function playSong(songid) {
     isok = res.ok;
     return res.json();
   });
+  if(!isok){
+    logout();
+    return;
+  }
+  else{
+  var audio = document.getElementById("audio");
+  var source = document.getElementById("audioSource");
+  source.src = "http://localhost:3000/songs/play/" + songid;
+  //console.log(song);
+  audio.load(); //call this to just preload the audio without playing
+  audio.play(); //call this to play the song right away
   let songs = result;
   playlist = songs;
   playlistorginal = [...songs];
   currentsongindex = playlist.findIndex((s) => s.id == songid);
   console.log(playlist, currentsongindex);
   document.getElementById("playsongname").innerHTML =
-    playlist[currentsongindex].title;
+    playlist[currentsongindex].title;}
 }
 
 function playforward() {

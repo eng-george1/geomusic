@@ -52,6 +52,11 @@ async function removefromList(id) {
       isok = res.ok;
       return res.json();
     });
+    if(!isok)
+    {
+      logout();
+      return;
+    }
     console.log("g");
     let songs = result;
    getPlaylist();

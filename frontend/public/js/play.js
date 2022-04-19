@@ -46,6 +46,8 @@ async function playSong(songid) {
 }
 
 function playforward() {
+  if(currentmode==2)
+  playlist =shuffleArray(playlistorginal);
   var audio = document.getElementById("audio");
   var source = document.getElementById("audioSource");
   console.log(playlist, currentsongindex);
@@ -54,6 +56,10 @@ function playforward() {
   } else {
     currentsongindex = currentsongindex + 1;
   }
+  console.log(source.src[source.src.length-1],"->",playlist[currentsongindex].id);
+  if(source.src[source.src.length-1].toString()== playlist[currentsongindex].id){
+    console.log("rep");
+  playlist =shuffleArray(playlistorginal);}
   source.src =
     "http://localhost:3000/songs/play/" + playlist[currentsongindex].id;
   audio.load(); //call this to just preload the audio without playing
@@ -62,6 +68,8 @@ function playforward() {
     playlist[currentsongindex].title;
 }
 function playbackward() {
+  if(currentmode==2)
+  playlist =shuffleArray(playlistorginal);
   var audio = document.getElementById("audio");
   var source = document.getElementById("audioSource");
   if (currentsongindex == 0) {
@@ -69,7 +77,10 @@ function playbackward() {
   } else {
     currentsongindex = currentsongindex - 1;
   }
-
+  console.log(source.src[source.src.length-1],"->",playlist[currentsongindex].id);
+if(source.src[source.src.length-1].toString()== playlist[currentsongindex].id){
+  console.log("rep");
+playlist =shuffleArray(playlistorginal);}
   source.src =
     "http://localhost:3000/songs/play/" + playlist[currentsongindex].id;
   audio.load(); //call this to just preload the audio without playing
@@ -80,7 +91,7 @@ function playbackward() {
 function playmode(mode) {
   console.log(currentmode);
   console.log(mode);
-  if (currentmode == mode) return;
+ // if (currentmode == mode) return;
   currentmode = mode;
   console.log(currentmode);
   switch (currentmode) {
@@ -92,7 +103,9 @@ function playmode(mode) {
     case 2:
       //shuffle
       console.log(playlist);
-      playlist = playlist.sort(() => Math.random() - 0.5);
+      // Used like so
+
+      playlist =shuffleArray(playlistorginal);
       console.log(playlist);
       break;
     case 3:
@@ -111,3 +124,18 @@ function selectmodebutton()
   document.getElementById("mode3").style.backgroundColor="#92bf92";
   document.getElementById("mode"+currentmode).style.backgroundColor="gray";
 }
+
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+  
+      // Generate random number
+      var j = Math.floor(Math.random() * (i + 1));
+                  
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+  }
+      
+  return array;
+}
+

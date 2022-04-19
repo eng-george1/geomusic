@@ -25,7 +25,7 @@ module.exports = class user {
       { userid: id, username: username },
       process.env.TOKEN_KEY || "geoMusic",
       {
-        expiresIn: '60s',/*process.env.TOKEN_EXPIRE.toString() ||*/
+        expiresIn: '12000s',/*process.env.TOKEN_EXPIRE.toString() ||*/
       }
     );
     // save user token

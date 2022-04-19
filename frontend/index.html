@@ -69,11 +69,18 @@
             </tbody>
         </table> 
     </div>
-   <div id="playsong">
+  
+    <div id="playforward">
+        <button class="active" onclick="playbackward()"><i class="fa fa-fast-backward"></i></button>
+        <button onclick="playforward()" class="active"><i class="fa fa-fast-forward"></i></button>
+      <label id="playsongname"></label>
     <audio id="audio" controls autoplay>       
         <source id="audioSource" src="" type="audio/mpeg">
-      Your browser does not support the audio element.
+        Your browser does not support the audio element.
       </audio>
+      <button class="active" onclick="normal()"><i class="fa-solid fa-list-music"></i></button>
+      <button class="active" onclick="shuffle()" ><i class="fa-solid fa-shuffle"></i></button>
+      <button class="active" onclick="once()"><i class="fa-solid fa-play-pause"></i></button>
 
    </div>
 

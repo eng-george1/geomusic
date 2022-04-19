@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyMusic Website</title>
+    <link rel="icon" type="image/x-icon" href="./public/image/favicon.png">
     <link rel="stylesheet" href="./public/css/style.css">
     <script src="https://kit.fontawesome.com/b83598f372.js" crossorigin="anonymous"></script>
     <script src="./public/js/main.js"> </script>
@@ -110,9 +111,9 @@
 
             <div style="display: inline-block; position: relative;
          right: -155px;">
-                <button class="active" onclick="normal()"><i class="fa-solid fa-repeat fa-3x"></i></button>
-                <button class="active" onclick="shuffle()"><i class="fa-solid fa-shuffle fa-3x"></i></button>
-                <button class="active" onclick="once()"><i class="fa-solid fa-rotate-right fa-3x "></i></button>
+                <button id="mode1" class="active" onclick="playmode(1)"><i class="fa-solid fa-repeat fa-3x"></i></button>
+                <button id="mode2" class="active" onclick="playmode(2)"><i class="fa-solid fa-shuffle fa-3x"></i></button>
+                <button id="mode3" class="active" onclick="playmode(3)"><i class="fa-solid fa-rotate-right fa-3x "></i></button>
             </div>
         </div>
 

@@ -12,6 +12,11 @@ window.onload = function () {
     console.log("onclick");
   };
   fillifToken();
+  selectmodebutton();
+  document.getElementById("audio").addEventListener('ended',function(){
+    //play next song
+    playforward();
+  });
 };
 async function login() {
   console.log("login");

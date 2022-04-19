@@ -26,9 +26,9 @@ module.exports = class song {
   static getById(id){
     return songs.find(s=>s.id===id);
   }
-  static search()
+  static search(keywords)
   {
-    //
+    return songs.filter(s=>s.title.toString().toLowerCase().includes(keywords.toString().toLowerCase()));
   }
   static fetchAlliList(list){    
     // return songs.filter(s=>list.includes(s.id));

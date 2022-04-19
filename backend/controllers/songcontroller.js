@@ -27,3 +27,12 @@ exports.playSong = (req, res, next) => {
       .status(401)
       .json({ message: "Invalid token or expired please login again" });
 };
+
+exports.searchSongs= (req, res, next) => {
+  if (users.isValidRequest(req)) {
+    res.status(200).json(Songs.search( req.body.searchKey));
+     } else
+    res
+      .status(401)
+      .json({ message: "Invalid token or expired please login again" });
+};

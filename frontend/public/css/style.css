@@ -132,3 +132,6 @@ table tbody tr {
 table tbody tr:nth-child(odd) {
 	background-color: #ffffff;
 }
+.searchdiv{
+    display: inline; 
+}

@@ -31,7 +31,8 @@ module.exports = class song {
     //
   }
   static fetchAlliList(list){    
-    return songs.filter(s=>list.includes(s.id));
+    // return songs.filter(s=>list.includes(s.id));
+    return list.map(e=>songs.find(s=>s.id==e));
   }
  static getSongFile(songId){
    return path.join(__dirname,"..","songs",songs.find(s=>s.id==songId).title+".mp3") 

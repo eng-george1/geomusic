@@ -20,6 +20,10 @@ window.onload = function () {
 };
 async function login() {
   console.log("login");
+  if(document.getElementById("username").value=="" || document.getElementById("password").value=="") {
+    errorlabel("Please fill the missed data", true);
+    return;
+  }
   let isok = false;
   let result = await fetch(apiurl + "users/login", {
     method: "POST",
@@ -59,6 +63,8 @@ async function logout() {
   document.getElementById("logoutform").style.display = "none";
   document.getElementById("intersted").style.display = "none";
   document.getElementById("playlist").style.display = "none";
+  playlist=[];
+  playlistorginal=[];
 }
 function errorlabel(message = "", isdisplay) {
   let errorlabel = document.getElementById("errorlabel");

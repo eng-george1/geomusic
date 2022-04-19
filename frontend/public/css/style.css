@@ -42,7 +42,8 @@ h1{
     flex-direction: column;
     padding: 15px;
     border: 2px solid black;
-}
+    background-color: #92bf92;
+   }
 
 .logo {
     margin-left: 28px;
@@ -59,7 +60,7 @@ h1{
     padding-top: 0px;
     margin-top: 20;
     margin-top: -54px;
-}
+    }
 
 input {
     border-radius: 5px;
@@ -96,7 +97,10 @@ input:hover {
     height: 50px;
     /* Green */
 }
-
+#login-btn{
+    width: 80px;
+    height: 38px;
+}
 #logoutform {
     text-align: end;
 }

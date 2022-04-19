@@ -12,8 +12,18 @@ async function getPlaylist() {
     return res.json();
   });
   let songs = result;
+  console.log(songs);
   let placeholder = document.querySelector("#playlistoutput");
   let out = "";
+  if(songs.length==0){
+  
+  out += `
+  <tr>    
+  <td style="text-align: center" colspan="4">No songs in your list</td>
+  </tr>
+`;
+placeholder.innerHTML = out;
+  }
   for (let song of songs) {
     out += `
 			<tr>

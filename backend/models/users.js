@@ -124,7 +124,7 @@ module.exports = class user {
   static removeSongfromPlaylist(requst, songid) {
     console.log("remove");
     let user = this.getUserbyRequest(requst);
-    if (user.playlist.findIndex((s) => s == songid) > 0) {
+    if (user.playlist.findIndex((s) => s == songid) >-1) {
       let indexsong = user.playlist.findIndex((s) => s == songid);
       user.playlist.splice(indexsong, 1);
       let index = users.findIndex((u) => u.id == user.id);

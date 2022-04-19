@@ -4,7 +4,8 @@
     font-family: sans-serif;
     box-sizing: border-box;
     overflow-x: hidden;
-
+    
+    
 }
 .fixeddiv{
 display: inline-block;
@@ -43,6 +44,7 @@ h1{
     padding: 15px;
     border: 2px solid black;
     background-color: #92bf92;
+    overflow-y: hidden;
    }
 
 .logo {
@@ -134,4 +136,7 @@ table tbody tr:nth-child(odd) {
 }
 .searchdiv{
     display: inline; 
+}
+i{
+    cursor: pointer;
 }

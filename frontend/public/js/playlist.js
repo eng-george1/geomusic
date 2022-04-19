@@ -40,7 +40,7 @@ placeholder.innerHTML = out;
 }
 async function removefromList(id) {
   console.log(id);
-  console.log(id,"add");
+  console.log(id,"remove");
   let isok=false;
   let result = await fetch(apiurl + "users/playlist/songs/"+id+"/", {
       method: "DELETE",

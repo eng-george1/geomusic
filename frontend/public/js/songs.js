@@ -30,23 +30,20 @@ async function getSongs() {
 			</tr>
 		`;
   }
-console.log(`addtoList(${songs[0].id})`);
+
   placeholder.innerHTML = out;
 }
-async function addtoList(id=1) {
+async function addtoList(id) {
     console.log(id);
     console.log(id,"add");
     let isok=false;
-    let result = await fetch(apiurl + "/playlist/songs/"+id+"/", {
+    let result = await fetch(apiurl + "users/playlist/songs/"+id+"/", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
           "Authorization": 'Bearer '+sessionStorage.getItem("token"),
         },
-      }).then((res) => {
-        isok = res.ok;
-        return res.json();
-      });
+      }).then((res) =>res.json());
       console.log("g");
       let songs = result;
       getPlaylist();

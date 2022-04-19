@@ -114,22 +114,23 @@ module.exports = class user {
   static addSongtoPlaylist(requst, songid) {
     console.log("added");
     let user = this.getUserbyRequest(requst);
-    if (user.playlist.findIndex(songid) < 0){ user.playlist.push(songid);
-      let index=users.findIndex(u=>u.id==user.id);
-      users.splice(index,1,user);
-      return user.playlist;
+    if (user.playlist.findIndex((s) => s == songid) < 0) {
+      user.playlist.push(parseInt(songid));
+      let index = users.findIndex((u) => u.id == user.id);
+      users.splice(index, 1, user);
     }
-
+    return user.playlist;
   }
   static removeSongfromPlaylist(requst, songid) {
+    console.log("remove");
     let user = this.getUserbyRequest(requst);
-    if (user.playlist.findIndex(songid) < 0){ 
-      let indexsong=user.playlist.findIndex(songid);
-      user.playlist.splice(indexsong,1);
-      let index=users.findIndex(u=>u.id==user.id);
-      users.splice(index,1,user);
+    if (user.playlist.findIndex((s) => s == songid) > 0) {
+      let indexsong = user.playlist.findIndex((s) => s == songid);
+      user.playlist.splice(indexsong, 1);
+      let index = users.findIndex((u) => u.id == user.id);
+      users.splice(index, 1, user);
       return user.playlist;
     }
-
+    return user.playlist;
   }
 };

@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const path=require("path");
 const songs = [];
 let counter = 0;
 const config = process.env;
@@ -31,6 +32,9 @@ module.exports = class song {
   }
   static fetchAlliList(list){    
     return songs.filter(s=>list.includes(s.id));
+  }
+ static getSongFile(songId){
+   return path.join(__dirname,"..","songs",songs.find(s=>s.id==songId).title+".mp3") 
   }
 
 };

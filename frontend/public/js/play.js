@@ -46,6 +46,7 @@ async function playSong(songid) {
 }
 
 function playforward() {
+  if(currentmode!=3){
   if(currentmode==2)
   playlist =shuffleArray(playlistorginal);
   var audio = document.getElementById("audio");
@@ -60,6 +61,7 @@ function playforward() {
   if(source.src[source.src.length-1].toString()== playlist[currentsongindex].id){
     console.log("rep");
   playlist =shuffleArray(playlistorginal);}
+  }
   source.src =
     "http://localhost:3000/songs/play/" + playlist[currentsongindex].id;
   audio.load(); //call this to just preload the audio without playing
@@ -68,6 +70,7 @@ function playforward() {
     playlist[currentsongindex].title;
 }
 function playbackward() {
+  if(currentmode!=3){
   if(currentmode==2)
   playlist =shuffleArray(playlistorginal);
   var audio = document.getElementById("audio");
@@ -81,6 +84,7 @@ function playbackward() {
 if(source.src[source.src.length-1].toString()== playlist[currentsongindex].id){
   console.log("rep");
 playlist =shuffleArray(playlistorginal);}
+  }
   source.src =
     "http://localhost:3000/songs/play/" + playlist[currentsongindex].id;
   audio.load(); //call this to just preload the audio without playing
@@ -97,8 +101,9 @@ function playmode(mode) {
   switch (currentmode) {
     case 1:
       //normal
+      let currentsongid=playlist[currentsongindex].id;
       playlist = [...playlistorginal];
-
+currentsongindex=playlist.findIndex(s=>s.id==currentsongid);
       break;
     case 2:
       //shuffle
